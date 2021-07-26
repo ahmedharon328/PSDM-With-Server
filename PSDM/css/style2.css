@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        
+    .contact-me .form label{
+        display: block;
+        color: #000;
+        margin-bottom: 10px;
+    }
+    .contact-me .form {
+       text-align: center;
+        padding-top: 20px;
+    }
+    .contact-me .form input[type="text"] {
+    width: 30%;
+    padding: 12px;
+    background-color:#555 ;
+    border: none;
+    color: #FFF;
+    margin-bottom: 30px;
+    border-radius: 20px;
+}
+.contact-me .form textarea{
+        background-color:#555;
+        color: #FFF;
+        height: 150px;
+        width: 40%;
+        display: block;
+        margin-left: 450px;
+        margin-bottom: 30px;    
+        border:none;
+        box-sizing: border-box;
+        padding: 10px 0px 10px 7px;
+        border-radius: 5px;
+    }
+
+    .contact-me .form input::placeholder{
+        text-align: center;
+        color: #FFF;
+    }
+
+    .contact-me .form textarea::placeholder{
+        text-align: center;
+        padding-top: 50px;
+        color: #FFF;
+    }
+
+    .contact-me .form input[type="submit"] {
+        border-radius: 10px;
+        background: none;
+        background-color: #191E22;
+        padding: 15px 30px;
+        color:#EEE; 
+        text-transform: uppercase;
+        border: 1px solid black;
+        cursor: pointer;
+}
+
+        .contanier{ width: 1300px; margin: auto; border-bottom:1px solid #000 ; height: 70px;}
+    
+        .links h2{
+            margin-left: 20px;
+            float: left;
+            font-weight: normal;
+            color: #AAA;
+        }
+        .links ul{
+            float: right;
+            list-style: none;
+        }
+        .links ul li{
+            display: inline-block;
+            margin: 15px 20px 0 0;
+            padding:10px; 
+        }
+        .links ul li a {
+            text-decoration: none;
+            color: #AAA;
+            font-size: 20px;
+        }
+        .links ul li a:hover{
+            color: #000;
+        }
+
+        .details {text-align: center; position: relative; box-sizing: border-box;}
+
+        .details h2{
+            text-transform: capitalize;
+        }
+        
+
+        .details .container {
+            border: 2px solid darkseagreen;
+            width: 500px;
+            height: 200px;
+            margin: auto;
+            background: #CCC;
+        }
+
+        .details p {
+            float: left;
+            padding-left: 15px;
+            padding-right: 15px ;
+        }
+
+        .details .delete{
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            border-radius: 50%;
+            padding: 8px;  
+            cursor: pointer;
+            font-size: 20px;  
+        }
+        .details .delete:hover{
+            color: red;
+            border-radius: 50%;
+            box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2) ;
+        }
+        .middle{
+            text-align:center ;
+            margin:40px 0;
+        }
+

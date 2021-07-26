@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews | <%= title %>   </title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body style="background:#EEE ;">
+    <div class="blogs">
+        <div class="contanier">
+            <div class="heading">
+                <h2>All Reviews</h2>
+                <ul>
+                    <li><a href="/create">New Review</a></li>
+                    <li> <a href="/home">Home</a></li>
+                </ul>
+            </div>
+        <% if (blogs.length > 0){ %> 
+            <% blogs.forEach(blog =>{ %>
+            <div class="blog">
+                <a class="single" href="/reviews/<%= blog._id %>">
+                    <h3 ><%= blog.name %> </h3>
+                    <p ><%= blog.email %> </p>
+                    <p> <%= blog.phone %> </p>
+                </a>
+            </div>
+         <% }) %>      
+        <% } else{ %>  
+            <p class="last">There Is No Review To Display</p>
+            <% } %> 
+        </div>
+    </div>
+    
+    <footer class="middle">&copy;&nbsp; Ahmed Haron</footer>
+</body>
+</html>

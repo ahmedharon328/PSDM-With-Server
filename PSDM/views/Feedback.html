@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeedBack</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body style="background: #EEE;">
+    <div class="feedBack">
+        <div class="circle"></div>
+        <p class="paragraph">Thank You For<br> Your FeedBack</p>
+        <p class="paragraph">You will redirect to the homepage in <span id="count"> 7 </span>  seconds</p>
+
+        <div class="big">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+
+    <script>
+        
+        function countDown(){
+            var span = document.getElementById('count')
+            console.log(span.innerHTML)
+            var count = 8 
+            var id = setInterval(() => {
+                if (count == 0){
+                    clearInterval(id)
+                }else{
+                    count --
+                    span.innerHTML= count
+                }
+            }, 1000);
+        }
+        countDown()
+
+        setTimeout(() => {
+            window.location='/home'
+        }, 8000);
+         
+        
+    </script>
+</body>
+</html>
