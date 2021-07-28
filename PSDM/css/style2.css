@@ -3,124 +3,184 @@
             margin: 0;
             padding: 0;
         }
-        
-    .contact-me .form label{
-        display: block;
+
+    .contanier-form{
+        width: 500px;
+        margin: 20px auto;
+        max-width: 100%;
+        text-align: center;        
+    }
+
+    .contact-me .form {
+         padding-top: 20px;
+         
+     }
+
+     .contact-me .form .form-control{
+         margin: 0 auto 20px auto;
+         width: 450px;
+         /* padding-bottom: 20px; */
+         position: relative;
+         
+         
+     }
+     .contact-me .form-control label{
+        display:block;
         color: #000;
         margin-bottom: 10px;
     }
-    .contact-me .form {
-       text-align: center;
-        padding-top: 20px;
-    }
-    .contact-me .form input[type="text"] {
-    width: 30%;
-    padding: 12px;
-    background-color:#555 ;
-    border: none;
-    color: #FFF;
-    margin-bottom: 30px;
-    border-radius: 20px;
-}
-.contact-me .form textarea{
-        background-color:#555;
-        color: #FFF;
-        height: 150px;
-        width: 40%;
-        display: block;
-        margin-left: 450px;
-        margin-bottom: 30px;    
-        border:none;
-        box-sizing: border-box;
-        padding: 10px 0px 10px 7px;
-        border-radius: 5px;
-    }
 
-    .contact-me .form input::placeholder{
-        text-align: center;
+    .contact-me .form .form-control input {
+        padding: 12px;
+        width: 70%;
+        background-color:#777 ;
         color: #FFF;
-    }
-
-    .contact-me .form textarea::placeholder{
-        text-align: center;
-        padding-top: 50px;
-        color: #FFF;
-    }
-
-    .contact-me .form input[type="submit"] {
         border-radius: 10px;
-        background: none;
-        background-color: #191E22;
-        padding: 15px 30px;
-        color:#EEE; 
-        text-transform: uppercase;
-        border: 1px solid black;
-        cursor: pointer;
+        display: block;
+        margin-left: 15%;
+        }
+
+    .contact-me .form .form-control.succes input{
+        border: 3px solid #2ecc71;
+    } 
+    .contact-me .form .form-control.error input{
+        border: 3px solid #e74c3c ;
+    }
+
+    .contact-me .form .form-control.error i.fa-exclamation-circle{
+        visibility: visible;
+        color: #e74c3c;
+    }
+
+    .contact-me .form .form-control.succes i.fa-check-circle{
+        visibility: visible;
+        color: #2ecc71;
+    }
+
+    .contact-me .form .form-control.error small {
+        visibility: visible;
+        color: #e74c3c;
+    }
+
+
+    .contact-me .form .form-control i {
+        position: absolute;
+        right:50px;
+        top:45px;
+        visibility: hidden;
+    }
+    .contact-me .form .form-control small{
+        position: absolute;
+        left: 80px;
+        visibility: hidden;
+        margin-top: 4px;
+        margin-bottom:10px ;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    
+.contact-me .form textarea{
+    background-color:#555;
+    color: #FFF;
+    height: 150px;
+    width: 80%;
+    display: block;
+    margin: 10px 0 20px 12.5%;    
+    border:none;
+    box-sizing: border-box;
+    padding: 10px 0px 10px 7px;
+    border-radius: 5px;
 }
 
-        .contanier{ width: 1300px; margin: auto; border-bottom:1px solid #000 ; height: 70px;}
+
+
+.contact-me .form input::placeholder{
+    text-align: center;
+    color: #FFF;
+}
+
+.contact-me .form textarea::placeholder{
+    text-align: center;
+    padding-top: 50px;
+    color: #FFF;
+}
+
+.contact-me .form input[type="submit"] {
+    border-radius: 10px;
+    width: 100%;
+    background: none;
+    background-color: #191E22;
+    padding: 15px 30px;
+    color:#EEE; 
+    text-transform: uppercase;
+    border: 1px solid black;
+    cursor: pointer;
+    margin: 20px 0 15px 12px;
+} 
+
+
+    .contanier{ width: 1300px; margin: auto; border-bottom:1px solid #000 ; height: 70px;}
+
+    .links h2{
+        margin-left: 20px;
+        float: left;
+        font-weight: normal;
+        color: #AAA;
+    }
+    .links ul{
+        float: right;
+        list-style: none;
+    }
+    .links ul li{
+        display: inline-block;
+        margin: 15px 20px 0 0;
+        padding:10px; 
+    }
+    .links ul li a {
+        text-decoration: none;
+        color: #AAA;
+        font-size: 20px;
+    }
+    .links ul li a:hover{
+        color: #000;
+    }
+
+    .details {text-align: center; position: relative; box-sizing: border-box;}
+
+    .details h2{
+        text-transform: capitalize;
+    }
     
-        .links h2{
-            margin-left: 20px;
-            float: left;
-            font-weight: normal;
-            color: #AAA;
-        }
-        .links ul{
-            float: right;
-            list-style: none;
-        }
-        .links ul li{
-            display: inline-block;
-            margin: 15px 20px 0 0;
-            padding:10px; 
-        }
-        .links ul li a {
-            text-decoration: none;
-            color: #AAA;
-            font-size: 20px;
-        }
-        .links ul li a:hover{
-            color: #000;
-        }
 
-        .details {text-align: center; position: relative; box-sizing: border-box;}
+    .details .container {
+        border: 2px solid darkseagreen;
+        width: 500px;
+        height: 200px;
+        margin: auto;
+        background: #CCC;
+    }
 
-        .details h2{
-            text-transform: capitalize;
-        }
-        
+    .details p {
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px ;
+    }
 
-        .details .container {
-            border: 2px solid darkseagreen;
-            width: 500px;
-            height: 200px;
-            margin: auto;
-            background: #CCC;
-        }
-
-        .details p {
-            float: left;
-            padding-left: 15px;
-            padding-right: 15px ;
-        }
-
-        .details .delete{
-            position: absolute;
-            top: 30px;
-            right: 50px;
-            border-radius: 50%;
-            padding: 8px;  
-            cursor: pointer;
-            font-size: 20px;  
-        }
-        .details .delete:hover{
-            color: red;
-            border-radius: 50%;
-            box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2) ;
-        }
-        .middle{
-            text-align:center ;
-            margin:40px 0;
-        }
+    .details .delete{
+        position: absolute;
+        top: 30px;
+        right: 50px;
+        border-radius: 50%;
+        padding: 8px;  
+        cursor: pointer;
+        font-size: 20px;  
+    }
+    .details .delete:hover{
+        color: red;
+        border-radius: 50%;
+        box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2) ;
+    }
+    .middle{
+        text-align:center ;
+        margin:40px 0;
+    }
 

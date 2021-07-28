@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style2.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Create | <%= title %>  </title>
 </head>
 <body style="background:#EEE">
@@ -21,23 +23,117 @@
         </div>
 
     <div class="contact-me">
-    
-    <form class="form" action="/reviews" method="POST" >
-        <label for="name">Name*</label>
-        <input type="text" placeholder="Name" name='name'required>
+        <div class="contanier-form">
+    <form class="form" action="/reviews" method="POST" id="form" >
+        <div class="form-control ">
+            <label for="name">Name*</label>
+            <input type="text" placeholder="Ahmed Haron" name='name'  id="name" required>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error Message</small>
+        </div>
+        <div class="form-control ">
+            <label for="Email Address">Email Address*</label>
+            <input type="email" placeholder="ahmedU@gmail.com" name="email"  id="email" required>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error Message</small>
+        </div>
+        <div class="form-control " >
+            <label for="Phone">Phone*</label>
+            <input type="text" placeholder="01097351579" name="phone" id="phone" onkeypress="isInputNumber(event)" >
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error Message</small>
+        </div>
+            <label for="Review">Review*</label>
+            <textarea placeholder="Your Review" name="review"   onkeypress="auto_grow(this)" onkeyup="auto_grow(this)"></textarea>
 
-        <label for="Email Address">Email Address*</label>
-        <input type="text" placeholder="Email" name="email" required>
-
-        <label for="Phone">Phone*</label>
-        <input type="text" placeholder="Phone" name="phone" required>
-
-        <label for="Review">Review*</label>
-        <textarea placeholder="Your Review" name="review" required rows="10" cols="10"></textarea>
-
-        <input type="submit" value="Contact Me">
-
+            <input type="submit" value="Contact Me">
      </form>
     </div>
+    </div>
+
+    <script>
+        function auto_grow(element){
+            element.style.height ="150px"
+            element.style.height = (element.scrollHeight)+'px'
+        }
+        const form = document.getElementById('form')
+        const name = document.getElementById('name')
+        const email = document.getElementById('email')
+        const phone = document.getElementById('phone')
+
+        form.addEventListener('submit',(e)=>{
+
+            checkInputs(e);
+        })
+
+        function checkInputs(e){
+            //Get Values from the inputs
+            const NameValue = name.value.trim();
+            const emailValue = email.value.trim();
+            const phoneValue = phone.value.trim();
+            const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/; 
+            
+            
+            if (NameValue.length < 8 ){
+                //ShowError
+                //add error class
+                setErrorFor(name,"Name Cant be that Small")
+                e.preventDefault()
+            }
+            else if(NameValue.length > 25){
+                setErrorFor(name,"Name Cant be that Big")
+                e.preventDefault()
+            }
+            else{
+                setSuccessFor(name)
+            }
+            
+            if(emailValue.match(pattern)){
+                 setSuccessFor(email, "This is valid Email")
+            }else{
+                setErrorFor(email,"This Is Invaild Email")
+                e.preventDefault()
+            }
+
+            if(phoneValue.length < 7){
+                setErrorFor(phone,"Phone Number Is Too Small")
+                e.preventDefault()
+            }
+            else if (phoneValue.length > 12){
+                setErrorFor(phone,"Phone Numebr Is Too Big")
+                e.preventDefault()
+            }
+            else{
+                setSuccessFor(phone)
+            }
+
+        }
+
+        function setErrorFor(input , message){
+            const formControl = input.parentElement; //.form-control
+            const small = formControl.querySelector('small')
+
+            small.innerText = message
+
+            formControl.className ='form-control error'
+        }
+
+        function setSuccessFor(input){
+            const formControl = input.parentElement;
+            
+            formControl.className = 'form-control succes'
+        }
+        function isInputNumber(evt){
+            const ch = String.fromCharCode(evt.which)
+
+            if(!(/[0-9]/.test(ch))){
+                evt.preventDefault()
+            }
+        }
+
+    </script>
 </body>
 </html>

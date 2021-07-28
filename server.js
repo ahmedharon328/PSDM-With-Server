@@ -13,7 +13,7 @@ const app = express();
 //Connect to mongoDB
 const mongDB = 'mongodb+srv://ahmedharon:peka9900@nodetuts.6rv64.mongodb.net/node-tuts?retryWrites=true&w=majority'
 mongoose.connect(mongDB ,{useNewUrlParser:true , useUnifiedTopology:true})
-.then((result) =>{const server = app.listen(3000,"localHost",(req,res)=>{
+.then((result) =>{ app.listen(3000,"localHost",(req,res)=>{
     console.log(`Server Is Running On localHost:3000`)
 })})
 .catch(err => console.log(err))
